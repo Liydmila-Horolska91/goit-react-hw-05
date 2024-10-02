@@ -1,6 +1,5 @@
-// src/pages/MoviesPage/MoviesPage.jsx
 import { useState } from 'react';
-import MovieList from '../../components/MovieList/MovieList';
+import MovieList from '../components/MovieList/MovieList';
 import { fetchSearchMovies } from '../../Api/Api';
 
 const MoviesPage = () => {
