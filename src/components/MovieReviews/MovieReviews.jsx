@@ -1,32 +1,31 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchMovieReviews } from '../../Api/Api';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { fetchReviews } from "../../services/movies-api";
+import s from "./MovieReviews.module.css";
 
-const MovieReviews = () => {
+export default function MovieReviews() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetchMovieReviews(movieId).then(setReviews);
+    const getData = async () => {
+      const data = await fetchReviews(movieId);
+      setReviews(data);
+    };
+    getData();
   }, [movieId]);
 
-  return (
-    <div>
-      <h3>Reviews</h3>
-      {reviews.length > 0 ? (
-        <ul>
-          {reviews.map((review) => (
-            <li key={review.id}>
-              <p>Author: {review.author}</p>
-              <p>{review.content}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No reviews available</p>
-      )}
-    </div>
-  );
-};
+  if (!reviews.length)
+    return <p className={s.empty}>Noone left a review yet...</p>;
 
-export default MovieReviews;
+  return (
+    <ul className={s.list}>
+      {reviews.map((review) => (
+        <li key={review.id} className={s.card}>
+          <p className={s.title}>{review.author}</p>
+          <p className={s.text}>{review.content}</p>
+        </li>
+      ))}
+    </ul>
+  );
+}

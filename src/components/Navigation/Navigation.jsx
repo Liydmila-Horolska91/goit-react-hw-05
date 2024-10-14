@@ -1,13 +1,20 @@
-import { NavLink } from 'react-router-dom';
-import styles from './Navigation.module.css';
+import { NavLink } from "react-router-dom";
+import clsx from "clsx";
+import s from "./Navigation.module.css";
 
-const Navigation = () => {
-  return (
-    <nav className={styles.nav}>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/movies">Movies</NavLink>
-    </nav>
-  );
+const buildLinkClass = ({ isActive }) => {
+  return clsx(s.link, isActive && s.active);
 };
 
-export default Navigation;
+export default function Navigation() {
+  return (
+    <nav className={s.navigation}>
+      <NavLink to="/" className={buildLinkClass}>
+        Home
+      </NavLink>
+      <NavLink to="/movies" className={buildLinkClass}>
+        Movies
+      </NavLink>
+    </nav>
+  );
+}
