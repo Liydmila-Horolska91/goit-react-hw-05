@@ -8,7 +8,7 @@
 
 .card {
     width: 300px;
-    border: 2px solid #0a2351;
+    border: 2px solid #510a4c;
 }
 
 .cardDescr {
@@ -17,12 +17,12 @@
 
 .cardTitle {
     text-align: center;
-    color: #0a2351;
+    color: #510a4c;
     margin-bottom: 10px;
 }
 
 .cardRate {
     text-align: center;
-    color: #0a2351;
+    color: #510a4c;
     font-size: 20px;
 }

@@ -5,14 +5,14 @@
     align-items: center;
     font-size: 20px;
     height: 60px;
-    border-bottom: 2px solid #0a2351;
+    border-bottom: 2px solid #510a4c;
 }
 
 .link {
     text-transform: uppercase;
-    color: #0a2351;
+    color: #510a4c;
 }
 
 .active {
-    color: #00bfff;
+    color: #b768c9;
 }
