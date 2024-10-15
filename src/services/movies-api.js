@@ -1,8 +1,8 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://api.themoviedb.org/3/movie/550?api_key=d365291e67ea42f41020bc3060bd087b";
+axios.defaults.baseURL = "https://api.themoviedb.org/3";
 
-const ACCESS_TOKEN = "d365291e67ea42f41020bc3060bd087b";
+const ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMzY1MjkxZTY3ZWE0MmY0MTAyMGJjMzA2MGJkMDg3YiIsIm5iZiI6MTcyOTAxNzY3MS40NjE4ODQsInN1YiI6IjY2ZmQ1ZmIwMjViNjFjMzNkYTU5NjBmNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dbndDo3OZIjvIYAc-wUtZ3ikZzBWJueEVgDIpFptCx4";
 
 const options = {
   headers: {
